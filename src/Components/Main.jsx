@@ -1,18 +1,15 @@
 import React from 'react'
 import Shimmer from './Shimmer'
+import FilterPanel from './FilterPanel'
+import Restaurants from './Restaurants'
 
 const Main = () => {
   return (
 
-    <div className='px-2 bg-green-400 mt-3'>
-        <div className=''> 
-          <h3 >Filters</h3>
-        </div>
-        <div>
-          <h3>Other Filters</h3>
-        </div>
-
-      {/* <Shimmer/> */}
+    <div className='w-full  bg-green-400 overflow-hidden'>
+         <FilterPanel/>
+        {/* <Shimmer/> */}
+         <Restaurants/> 
     </div>
   )
 }
