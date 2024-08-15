@@ -11,5 +11,8 @@
     "Food-King"
   ],
   "author": "Vishal Jadhav",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
 }
