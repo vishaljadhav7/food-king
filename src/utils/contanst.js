@@ -47,5 +47,5 @@ export const RESTAURANT_MENU_API = `https://api.allorigins.win/get?url=${encodeU
 export const RESTAURANT_LIST_API = `https://api.allorigins.win/get?url=${encodeURIComponent("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9634&lng=77.5855&restaurantId=")}` ;
 
 
-export const CARD_URL =
+export const CARD_CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";

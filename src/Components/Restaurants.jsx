@@ -1,12 +1,18 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import { useRestaurants } from '../utils/useRestuarants'
+import React from 'react'
 
-const Restaurants = () => {
+import RestaurantCard from './RestaurantCard';
 
-   const data =  useRestaurants();
+
+const Restaurants = ({allRestaurants, filteredRestaurants}) => {   
    
   return (
-    <div>Restaurants</div>
+    <div className='p-2 m-2 flex flex-wrap justify-center'>
+      {filteredRestaurants.map((restaurantItem)=> 
+       (
+        <RestaurantCard key={restaurantItem.info.id} resData={restaurantItem}/>
+       )
+      )}
+    </div>
   )
 }
 

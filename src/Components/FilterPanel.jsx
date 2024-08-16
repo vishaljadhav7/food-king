@@ -19,11 +19,12 @@ const FilterPanel = () => {
   const [query, setQuery] = useState('')
 
   return (
-    <div className='h-14 flex justify-center items-center p-2'>
+    <div className='h-14 flex justify-center items-center p-2 m-2'>
         <div className='flex items-center justify-center'>
            <input 
            type="text" 
            onChange={(e)=>setQuery(e.target.value)}
+           placeholder='Search for nearby restaurants'
            className='p-2 rounded-md border-none w-80'
            />
 

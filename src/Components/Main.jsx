@@ -1,15 +1,21 @@
 import React from 'react'
-import Shimmer from './Shimmer'
 import FilterPanel from './FilterPanel'
 import Restaurants from './Restaurants'
+import { useRestaurants } from '../utils/useRestuarants'
+import Shimmer from './Shimmer'
 
 const Main = () => {
+  const {allRestaurants, filteredRestaurants, isLoading} =  useRestaurants(); // 
+  
+  if(isLoading){
+    return <Shimmer/>;
+  }
+
   return (
 
-    <div className='w-full  bg-green-400 overflow-hidden'>
+    <div className='w-full  overflow-hidden'>
          <FilterPanel/>
-        {/* <Shimmer/> */}
-         <Restaurants/> 
+         <Restaurants allRestaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/> 
     </div>
   )
 }
