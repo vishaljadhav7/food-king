@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import FilterPanel from './FilterPanel'
 import Restaurants from './Restaurants'
-import { useRestaurants } from '../utils/useRestuarants'
+import { RESTAURANT_MENU_API } from '../utils/contanst'
 import Shimmer from './Shimmer'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { fetchRestaurants } from '../features/restaurantSlice'
 
 const Main = () => {
-  const {allRestaurants, filteredRestaurants, isLoading} =  useRestaurants(); // 
+  // const {allRestaurants, filteredRestaurants, isLoading} =  useRestaurants(); // 
+  const dispatch = useDispatch()
+  const restaurantState = useSelector((store) => (store.restaurant));
+  const {status, allRestaurants, filteredRestaurants} = restaurantState;
+
+  useEffect(()=>{
+    dispatch(fetchRestaurants(RESTAURANT_MENU_API))
+  }, []) 
+
   
-  if(isLoading){
+  if(status === "loading"){
     return <Shimmer/>;
   }
 
@@ -15,7 +26,7 @@ const Main = () => {
 
     <div className='w-full  overflow-hidden'>
          <FilterPanel/>
-         <Restaurants allRestaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/> 
+         <Restaurants/> 
     </div>
   )
 }
