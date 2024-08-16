@@ -18,7 +18,7 @@ const Navbar = () => {
         <Navlinks navlinks={navItems} classStyle={'hidden md:flex  md:gap-4'}/> 
          
         <button className="md:hidden cursor-pointer text-2xl transition-all" onClick={()=>setIsOpen(!isOpen)}> 
-       {isOpen ? <IoClose /> : <GiHamburgerMenu /> }   
+          {isOpen ? <IoClose /> : <GiHamburgerMenu /> }   
         </button> 
  
         { isOpen ? 

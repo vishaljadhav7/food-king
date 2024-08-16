@@ -28,13 +28,13 @@ const RestaurantCard = ({resData}) => {
         />
         <h3 className="font-bold py-1 text-lg">{name}</h3>
         
-        {/* <h4>{avgRating} stars</h4> */}
-        <div className="flex items-center h-5 w-11 gap-1 py-0 px-1 style={buttonStyle} mb-1" >
-           <span>{avgRating}</span>
-           <CiStar/> </div>
-             <div className="text-opacity-0">
-             <h4 >{cuisines.join(", ")}</h4>
-             </div>
+        <div className="flex items-center h-5 w-11 gap-1 py-0 px-1 mb-1" >
+          <span>{avgRating}</span> <CiStar/> 
+        </div>
+        
+        <div className="text-opacity-0">
+          <h4>{cuisines.join(", ")}</h4>
+        </div>
           
         {/* <h4>₹{costForTwo / 100} FOR TWO</h4> */}
         {/* <h4>{deliveryTime} minutes</h4> */}
