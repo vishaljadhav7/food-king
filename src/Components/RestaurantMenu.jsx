@@ -1,21 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { RESTAURANT_LIST_API } from '../utils/contanst';
+import Shimmer from './Shimmer';
+import useRestaurantList from '../utils/useRestaurantList';
 
 const RestaurantMenu = () => {
  const {resId} = useParams();
  
- async function getResList(){
-   
-    const response = await fetch(RESTAURANT_LIST_API + resId);
-    const jsonResponse = await response.json();
-    const parsedData  = await JSON.parse(jsonResponse.contents)
-    console.log(parsedData)
- }
+ const {restaurantListCards, status} = useRestaurantList(resId)
+  
+ console.log(restaurantListCards.length && restaurantListCards[2]?.card.card.info.name, " line 14 resMeny")
 
- useEffect(()=>{
-   getResList()
- }, [])
+ if(status === 'loading'){
+  return <Shimmer/>
+ }
 
   return (
     <div>RestaurantMenu with id {resId} </div>

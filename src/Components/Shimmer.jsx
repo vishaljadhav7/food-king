@@ -16,7 +16,7 @@ const ShimmerCard = () =>{
 const Shimmer = () => {
     const LIMIT = 10;
   return (
-    <div className="w-screen flex flex-wrap justify-center items-center gap-4 mt-4">
+    <div className="w-screen flex flex-wrap justify-center items-center gap-4 my-5">
       {new Array(LIMIT).fill(null).map((_, idx) => (
         <ShimmerCard key={idx} />
       ))}

@@ -11,7 +11,7 @@ const Restaurants = () => {
    
   return (
     <div className='p-2 m-2 flex flex-wrap justify-center'>
-      {filteredRestaurants.map((restaurantItem)=> { 
+      { filteredRestaurants.length && filteredRestaurants.map((restaurantItem)=> { 
         const resId = restaurantItem.info.id;
         
           return (

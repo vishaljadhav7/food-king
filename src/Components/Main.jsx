@@ -14,7 +14,12 @@ const Main = () => {
   const {status, allRestaurants, filteredRestaurants} = restaurantState;
 
   useEffect(()=>{
-    dispatch(fetchRestaurants(RESTAURANT_MENU_API))
+    if(allRestaurants.length > 0){
+     console.log("need not to fetch");
+    }else{
+      console.log("need  to fetch");
+      dispatch(fetchRestaurants(RESTAURANT_MENU_API))
+    }
   }, []) 
 
   
