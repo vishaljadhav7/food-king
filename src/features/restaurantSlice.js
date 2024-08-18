@@ -50,7 +50,7 @@ const restaurantSlice = createSlice({
          })
 
          .addCase(fetchRestaurants.rejected, (state, action) => {
-            console.log(action.payload)
+            // console.log(action.payload)
             state.status = STATUSES.ERROR;
          })
     }

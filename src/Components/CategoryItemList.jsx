@@ -6,7 +6,6 @@ import { addItem } from '../features/cartSlice';
 const CategoryItemList = ({items}) => {
   const dispatch = useDispatch()
   const cartItems = useSelector((state)=> state.cart.items);
-  // console.log(cartItems) 
 
   const handleAdd = (item) => {
    dispatch(addItem(item.card.info))
