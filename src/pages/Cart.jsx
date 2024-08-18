@@ -11,10 +11,10 @@ const Cart = () => {
       {cartItems.length > 0 ? (
         <div className='mt-10'>
           <div className='w-full flex justify-between h-full border-b-[5px] border-teal-300 my-2'>
-            <h3 className='text-[16px] md:text-2xl text-center'>Product</h3>
-            <h3 className='text-[16px] md:text-2xl text-center'>Price</h3>
-            <h3 className='text-[16px] md:text-2xl text-center'>Quantity</h3>
-            <h3 className='text-[16px] md:text-2xl text-center'>Total</h3>
+            <h3 className='text-[15px] md:text-2xl text-center'>Product</h3>
+            <h3 className='text-[15px] md:text-2xl text-center'>Price</h3>
+            <h3 className='text-[15px] md:text-2xl text-center'>Quantity</h3>
+            <h3 className='text-[15px] md:text-2xl text-center'>Total</h3>
           </div>
           <div className='cart-items mt-4'>
             {cartItems.map((item) => (
