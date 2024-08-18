@@ -8,8 +8,8 @@ import { FaMinus } from "react-icons/fa6";
 
 const CartItem = ({data}) => {
     const dispatch = useDispatch()
-    const totalPrice = Math.floor((data.cartQuantity * data.defaultPrice)/100)
-    console.log(totalPrice, typeof data.defaultPrice, typeof data.cartQuantity)
+    const totalPrice = Math.floor((data.cartQuantity  *( data.defaultPrice || data.price))/100)
+
      const handleRemoveItem = () => {
         dispatch(removeItem(data.id))
      }
@@ -34,7 +34,7 @@ const CartItem = ({data}) => {
   
               <div className='font-semibold text-1xl md:-ml-64 text-center'>
                   
-                  <h3>{data.defaultPrice/100}/-</h3>
+                  <h3>{(data.defaultPrice || data.price)/100}/-</h3>
               </div> 
     
                 <div className='md:flex flex-col items-center justify-center text-[18px] md:-mt-22 text-center gap-3 ml-8 md:-ml-8'>
