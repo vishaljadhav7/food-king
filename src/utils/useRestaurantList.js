@@ -40,17 +40,13 @@ const STATUSES = {
     }
 
     useEffect(()=>{
-        // console.log(cachedLists.length, cachedLists)
         if(cachedLists.length > 0){
-            // setRestaurantsListCards([])
-            // console.log("cachedLists.length check ")
             const idx = cachedLists.findIndex((item)=>{
                 return item.id == resId 
             })
             if(idx > -1){
                 setRestaurantsListCards(cachedLists[idx].cards)
                 setStatus(STATUSES.IDLE)
-                // console.log("no n/w call", cachedLists[idx].cards[2].card.card.info.name)
             }  else{
                 getListCards(resId);
             } 

@@ -30,10 +30,6 @@ const categories =restaurantListCards.length &&  restaurantListCards[4]?.grouped
     "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
 );
 
-// console.log("itemCards are ", itemCards )
-// console.log("categories are ", categories)
-
-
 
   return (
     <div className='w-screen mt-2'>
@@ -46,7 +42,7 @@ const categories =restaurantListCards.length &&  restaurantListCards[4]?.grouped
         />
 
         <div className="flex flex-col basis-[540px] m-5 text-white">
-          <h2 className="text-3xl max-w-[538px] font-semibold text-white">
+          <h2 className="md:text-3xl max-w-[538px] font-semibold text-white">
             {name}
           </h2>
           <p className="overflow-hidden whitespace-nowrap text-[15px] max-w-[538px] text-white">
@@ -57,9 +53,8 @@ const categories =restaurantListCards.length &&  restaurantListCards[4]?.grouped
               <AiFillStar />
               <span >{avgRating}</span>
             </div>
-            <div>|</div>
-            <div>{costForTwoMessage}</div>
-            <div>|</div>
+            <div className='ml-1 md:ml-0 font-semibold text-2xl md:text-1xl'>|</div>
+            <div className='ml-3 md:ml-0'>{costForTwoMessage}</div>
           </div>
         </div>
       </div>}

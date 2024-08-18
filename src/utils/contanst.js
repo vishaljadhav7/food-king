@@ -26,21 +26,6 @@ export  const navItems = [
       },           
 ]
 
-export const filters = [
-  {
-    id : 1001,
-    filterName : "fast delivery",
-  },
-  {
-    id : 1002,
-    filterName : "ratings 4.0+"
-  },
-  {
-    id : 1003,
-    filterName : "Pure Veg",
-  }
-]
-
 
 export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/";
 
@@ -49,5 +34,9 @@ export const RESTAURANT_MENU_API = `https://api.allorigins.win/get?url=${encodeU
 export const RESTAURANT_LIST_API = `https://api.allorigins.win/get?url=${encodeURIComponent("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9634&lng=77.5855&restaurantId=")}` ;
 
 
-export const CARD_CDN_URL =
-  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
+export const CARD_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
+
+
+export const INSTA_MART_API = `https://api.allorigins.win/get?url=${encodeURIComponent("https://www.swiggy.com/api/instamart/home?clientId=INSTAMART-APP")}` ;
+
+export const INSTA_MART_CDN = "https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_294/"

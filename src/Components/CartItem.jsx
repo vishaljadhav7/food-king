@@ -9,7 +9,7 @@ import { FaMinus } from "react-icons/fa6";
 const CartItem = ({data}) => {
     const dispatch = useDispatch()
     const totalPrice = Math.floor((data.cartQuantity * data.defaultPrice)/100)
-    
+    console.log(totalPrice, typeof data.defaultPrice, typeof data.cartQuantity)
      const handleRemoveItem = () => {
         dispatch(removeItem(data.id))
      }
@@ -23,16 +23,16 @@ const CartItem = ({data}) => {
      }
 
     return (
-           <div className= "flex  h-32 justify-between border-b-2 border-purple-400 mb-5">
+           <div className= "flex h-32 justify-between border-b-2 border-purple-400 mb-5">
                <div className='w-18 flex  mb-3 gap-4'>
                   <img src={"https://media-assets.swiggy.com/swiggy/image/upload/"+ data.imageId} alt="" className='w-2/6 hidden md:block' /> 
                <div className='w-[100px]'>
-                   <h3 className='font-semibold text-1xl'>{data.name}</h3>
+                   <h3 className='font-semibold md:text-[13px] md:w-60'>{data.name}</h3>
                     <button onClick={() => handleRemoveItem()}><FaTrash /></button>
                </div>
              </div>
   
-              <div className='font-semibold text-1xl md:-ml-72 text-center'>
+              <div className='font-semibold text-1xl md:-ml-64 text-center'>
                   
                   <h3>{data.defaultPrice/100}/-</h3>
               </div> 
