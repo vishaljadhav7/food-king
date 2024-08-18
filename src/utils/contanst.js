@@ -5,15 +5,15 @@ export  const navItems = [
       url_Link : "/",   
     }, 
     {
-      id : 762113,
-      title : "About",
-      url_Link : "/about",   
-    },    
+      id : 236797,
+      title : "Contact Us",
+      url_Link : "/contact",   
+    },
     {
-        id : 236797,
-        title : "Contact Us",
-        url_Link : "/contact",   
-    },   
+      id : 762113,
+      title : "Cart",
+      url_Link : "/cart",   
+    },       
     {
         id : 576313,
         title : "Instamart",
@@ -41,6 +41,8 @@ export const filters = [
   }
 ]
 
+
+export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/";
 
 export const RESTAURANT_MENU_API = `https://api.allorigins.win/get?url=${encodeURIComponent("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9634&lng=77.5855&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")}` ;
 

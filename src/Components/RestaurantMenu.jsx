@@ -1,21 +1,82 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState} from 'react'
 import { useParams } from 'react-router-dom';
 import Shimmer from './Shimmer';
 import useRestaurantList from '../utils/useRestaurantList';
+import { AiFillStar } from "react-icons/ai";
+import { IMG_URL } from '../utils/contanst';
+import CategorySection from './CategorySection';
 
 const RestaurantMenu = () => {
  const {resId} = useParams();
  
  const {restaurantListCards, status} = useRestaurantList(resId)
-  
- console.log(restaurantListCards.length && restaurantListCards[2]?.card.card.info.name, " line 14 resMeny")
+
+ const [showIndex, setShowIndex] = useState(null)
 
  if(status === 'loading'){
   return <Shimmer/>
  }
 
+  
+//  console.log(restaurantListCards.length && restaurantListCards, " line 14 resMenu")
+
+ const { name, cuisines, costForTwoMessage , avgRating} =
+ restaurantListCards.length && restaurantListCards[2]?.card?.card?.info;
+
+
+const categories =restaurantListCards.length &&  restaurantListCards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  (c) =>
+    c.card?.["card"]?.["@type"] ===
+    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+);
+
+// console.log("itemCards are ", itemCards )
+// console.log("categories are ", categories)
+
+
+
   return (
-    <div>RestaurantMenu with id {resId} </div>
+    <div className='w-screen mt-2'>
+       { restaurantListCards.length &&  <div className="flex basis-full h-60 justify-evenly items-center p-8 bg-blue-950">
+        <img
+          className="w-[254px] h-[165px] mob:w-[130px] mob:[81px] rounded-lg object-cover"
+          src={IMG_URL + restaurantListCards[2]?.card?.card?.info?.cloudinaryImageId}
+
+          alt={name}
+        />
+
+        <div className="flex flex-col basis-[540px] m-5 text-white">
+          <h2 className="text-3xl max-w-[538px] font-semibold text-white">
+            {name}
+          </h2>
+          <p className="overflow-hidden whitespace-nowrap text-[15px] max-w-[538px] text-white">
+            {cuisines.join(", ")}
+          </p>
+          <div className="flex mt-5 justify-between items-center text-sm font-semibold pb-2.5 max-w-[342px] mob:text-xs mob:font-normal">
+            <div className="flex items-center px-1 py-0 gap-1 ">
+              <AiFillStar />
+              <span >{avgRating}</span>
+            </div>
+            <div>|</div>
+            <div>{costForTwoMessage}</div>
+            <div>|</div>
+          </div>
+        </div>
+      </div>}
+
+      <div className='text-center mt-2 px-4'>
+
+         { categories.length && categories.map((category, idx)=> (
+           <CategorySection 
+            key={category?.card?.card.title}
+            data={category?.card?.card}
+            setShowIndex={setShowIndex}
+           />
+         ))}
+
+      </div>
+
+    </div>
   )
 }
 

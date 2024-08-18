@@ -23,7 +23,7 @@ const STATUSES = {
     async function getListCards(resId){
         try {
             setStatus(STATUSES.LOADING)
-            console.log("n/w call is running ")
+            // console.log("n/w call is running ")
             const response = await fetch(RESTAURANT_LIST_API + resId);
             const jsonResponse = await response.json();
             const parsedData  = await JSON.parse(jsonResponse.contents)
@@ -40,17 +40,17 @@ const STATUSES = {
     }
 
     useEffect(()=>{
-        console.log(cachedLists.length, cachedLists)
+        // console.log(cachedLists.length, cachedLists)
         if(cachedLists.length > 0){
             // setRestaurantsListCards([])
-            console.log("cachedLists.length check ")
+            // console.log("cachedLists.length check ")
             const idx = cachedLists.findIndex((item)=>{
                 return item.id == resId 
             })
             if(idx > -1){
                 setRestaurantsListCards(cachedLists[idx].cards)
                 setStatus(STATUSES.IDLE)
-                console.log("no n/w call", cachedLists[idx].cards[2].card.card.info.name)
+                // console.log("no n/w call", cachedLists[idx].cards[2].card.card.info.name)
             }  else{
                 getListCards(resId);
             } 

@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='relative h-20 w-full px-7 flex justify-between items-center shadow-lg'>
+    <div className='relative h-20 w-screen px-7 flex justify-between items-center shadow-lg'>
        <div className='w-20  cursor-pointer '>
           <img src={Logo} alt="Logo" />
        </div>
@@ -22,7 +22,7 @@ const Navbar = () => {
         </button> 
  
         { isOpen ? 
-            <Navlinks navlinks={navItems} classStyle={'flex flex-col gap-4 absolute left-0 w-screen bg-slate-400 text-white items-center top-20 h-[210px] py-2 z-20 md:hidden transition-transform duration-2000'}/> : null
+            <Navlinks navlinks={navItems} classStyle={'flex flex-col gap-4 absolute left-0 w-screen bg-slate-400 text-white items-center top-20 h-[290px] py-2 z-20 md:hidden transition-transform duration-2000'}/> : null
         }
     </div>
   )

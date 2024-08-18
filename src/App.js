@@ -4,7 +4,7 @@ import myStore from "./store/myStore";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./Components/Main";
-import About from './pages/About'
+import Cart from './pages/Cart'
 import Contact from './pages/Contact'
 import SignUp from './pages/SignUp'
 import Instamart from './pages/InstaMart'
@@ -25,8 +25,8 @@ const App = () => {
                 children : []
             },
             {
-                path : "/about",
-                element : <About/>,
+                path : "/cart",
+                element : <Cart/>,
                 children : []
             },
             {
