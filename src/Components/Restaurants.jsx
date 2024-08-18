@@ -8,6 +8,7 @@ const Restaurants = () => {
   const restaurantState = useSelector((store) => (store.restaurant));
   
   const {filteredRestaurants} = restaurantState;
+  console.log(filteredRestaurants)
    
   return (
     <div className='p-2 m-2 flex flex-wrap justify-center'>

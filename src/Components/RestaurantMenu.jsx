@@ -32,7 +32,7 @@ const categories =restaurantListCards.length &&  restaurantListCards[4]?.grouped
 
 
   return (
-    <div className='w-screen mt-2'>
+    <div className='w-screen '>
        { restaurantListCards.length &&  <div className="flex basis-full h-60 justify-evenly items-center p-8 bg-blue-950">
         <img
           className="w-[254px] h-[165px] mob:w-[130px] mob:[81px] rounded-lg object-cover"

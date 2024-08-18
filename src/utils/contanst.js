@@ -26,6 +26,29 @@ export  const navItems = [
       },           
 ]
 
+export const filterItems = [
+  {
+    id : 23535245,
+    value :  "default"
+  },
+  {
+    id : 10992322,
+    value : "delivery time" 
+  },
+  {
+    id : 243411123,
+    value : "high ratings+"
+  },
+  {
+    id : 6745333,
+    value : "low to high (costForTwo)"
+  },
+  {
+    id : 34234353,
+    value : "high to low (costForTwo)"
+  }
+]
+
 
 export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/";
 
