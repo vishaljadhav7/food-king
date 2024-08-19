@@ -29,10 +29,6 @@ const categories = restaurantListCards.length &&  restaurantListCards[4]?.groupe
    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
 );
 
-console.log(categories)
-
-
-
 
 if(status === 'loading'){
   return <Shimmer/>
@@ -40,6 +36,8 @@ if(status === 'loading'){
 
 
   return (
+      <div >
+
     <div className='w-screen '>
        { restaurantListCards.length &&  <div className="flex basis-full h-60 justify-evenly items-center p-8 bg-blue-950">
         <img
@@ -82,6 +80,7 @@ if(status === 'loading'){
       </div>
 
     </div>
+      </div>
   )
 }
 
