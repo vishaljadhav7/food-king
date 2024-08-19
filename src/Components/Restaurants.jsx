@@ -8,7 +8,7 @@ const Restaurants = () => {
   const restaurantState = useSelector((store) => (store.restaurant));
   
   const {filteredRestaurants} = restaurantState;
-  console.log(filteredRestaurants)
+
    
   return (
     <div className='p-2 m-2 grid md:grid-cols-4  grid-cols-2 items-center gap-5'>
