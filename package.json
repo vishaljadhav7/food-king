@@ -2,7 +2,7 @@
   "name": "food_king",
   "version": "1.0.0",
   "description": "This is Food King Web App",
-  "main": "main.js",
+
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
