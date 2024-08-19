@@ -11,24 +11,32 @@ const RestaurantMenu = () => {
  
  const {restaurantListCards, status} = useRestaurantList(resId)
 
- const [showIndex, setShowIndex] = useState(null)
+ const  [accordionId, setAccordionId] = useState(null) 
 
- if(status === 'loading'){
+ const showItems = (newId) => {
+  setAccordionId((prevId) => {
+     return prevId === newId ? null : newId
+  });
+}
+
+const { name, cuisines, costForTwoMessage , avgRating} =
+restaurantListCards.length && restaurantListCards[2]?.card?.card?.info;
+
+
+const categories = restaurantListCards.length &&  restaurantListCards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+ (c) =>
+   c.card?.["card"]?.["@type"] ===
+   "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+);
+
+console.log(categories)
+
+
+
+
+if(status === 'loading'){
   return <Shimmer/>
  }
-
-  
-//  console.log(restaurantListCards.length && restaurantListCards, " line 14 resMenu")
-
- const { name, cuisines, costForTwoMessage , avgRating} =
- restaurantListCards.length && restaurantListCards[2]?.card?.card?.info;
-
-
-const categories =restaurantListCards.length &&  restaurantListCards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-  (c) =>
-    c.card?.["card"]?.["@type"] ===
-    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-);
 
 
   return (
@@ -65,7 +73,9 @@ const categories =restaurantListCards.length &&  restaurantListCards[4]?.grouped
            <CategorySection 
             key={category?.card?.card.title}
             data={category?.card?.card}
-            setShowIndex={setShowIndex}
+            showItems={showItems}
+            index = {idx}
+            accordionId={accordionId}
            />
          ))}
 

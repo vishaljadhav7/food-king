@@ -33,8 +33,9 @@ const FilterPanel = () => {
          </button>
         </div>
         
-       <div className='  ml-5 md:ml-0'>
-           <select name="filters" id="11ce" className="w-[250px] bg-purple-400 rounded-md p-1 text-white md:mr-10"
+       <div className='w-full md:ml-0 flex justify-center items-center gap-2'>
+        <label htmlFor="11ce" className='font-bold text-teal-500'>Sort By :</label>
+           <select name="filters" id="11ce" className="md:w-[200px] w-[100px] bg-purple-400 rounded-md p-1 text-white md:mr-10"
               onChange={(e)=> handleFilters(e.target.value)}
            >
              {filterItems.map((item) => (

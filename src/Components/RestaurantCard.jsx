@@ -19,17 +19,18 @@ const RestaurantCard = ({resData}) => {
     return (
       <div
         data-testid="resCard"
-        className="m-4 p-4 w-[250px] rounded   transition-all duration-700 hover:scale-110 cursor-pointer"
+        className="m-4 p-4 md:w-[250px] rounded w-[150px]   transition-all duration-700 hover:scale-110 cursor-pointer"
       >
         <img
-          className="rounded-lg h-[150px] w-[100%] object-cover"
+          className="rounded-lg md:h-[150px] h-[120px] w-[100%] object-cover"
           alt="res-logo"
           src={CARD_CDN_URL + cloudinaryImageId}
         />
         <h3 className="font-bold py-1 text-lg">{name}</h3>
         
         <div className="flex items-center h-5 w-11 gap-1 py-0 px-1 mb-1" >
-          <span>{avgRating}</span> <CiStar/> 
+          <span>{avgRating}</span> 
+          <CiStar/> 
         </div>
         
         <div className="text-opacity-0">
