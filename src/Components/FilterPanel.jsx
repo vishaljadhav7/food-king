@@ -13,7 +13,7 @@ const FilterPanel = () => {
 
   const handleFilters = (filterQuery) =>{
     //  if(filterQuery === "default") return;
-     console.log(filterQuery)
+
      dispatch( filteredRestaurantCards(filterQuery))       
   }
 

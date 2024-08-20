@@ -1,11 +1,11 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import { addItem } from '../features/cartSlice';
+import Expandable from './Expandable';
 
 
 const CategoryItemList = ({items}) => {
   const dispatch = useDispatch()
-  const cartItems = useSelector((state)=> state.cart.items);
 
   const handleAdd = (item) => {
    dispatch(addItem(item.card.info))
@@ -25,7 +25,9 @@ const CategoryItemList = ({items}) => {
                 <h3 className='font-medium'> - ₹ {item.card.info.price
                   ? item.card.info.price / 100
                   : item.card.info.defaultPrice / 100}/-</h3> 
-               <p>{item.card.info.description}</p>
+                 <Expandable>
+                  {item.card.info.description}
+                 </Expandable>
             </div>
 
             <div className='w-1/3  flex flex-col justify-center items-center p-2'>

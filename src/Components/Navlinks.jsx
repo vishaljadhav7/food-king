@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 const Navlinks = ({navlinks, classStyle}) => {
   const cartItems = useSelector((state)=>(state.cart.items))
   const totalItems = cartItems.length
-  console.log(totalItems)
   return (
      <ul  className={classStyle}>
 

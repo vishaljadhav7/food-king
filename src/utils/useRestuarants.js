@@ -5,7 +5,7 @@ export function useRestaurants(){
     const [allRestaurants, setAllRestaurants] = useState([])
     const [filteredRestaurants, setFilteredRestaurants] = useState([])
     const [isLoading, setIsLoading] = useState(false);
-    // const [] = useState()
+    const [error, setError] = useState(false)
 
     useEffect(()=>{
       getData();
@@ -23,7 +23,7 @@ export function useRestaurants(){
       setIsLoading(false);
 
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
 
      }
