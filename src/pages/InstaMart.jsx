@@ -3,11 +3,11 @@ import { fetchInstaMartCards } from '../features/instaMartSlice'
 import { useSelector, useDispatch } from 'react-redux';
 import Shimmer from '../Components/Shimmer'
 import InstaMartCard from '../Components/InstaMartCard'
+import { Link } from 'react-router-dom';
 
 const InstaMart = () => {
    const dispatch = useDispatch();
    const {status ,filteredInstaMartCards} = useSelector((state) => (state.instaMart))
-
 
 
   useEffect(()=>{
@@ -27,7 +27,9 @@ if(status === "loading"){
     <div className='w-screen min-h-screen grid md:grid-cols-5 grid-cols-2 gap-3 place-items-center my-5'>     
        {filteredInstaMartCards?.length && 
         filteredInstaMartCards.map((card) => (
-           <InstaMartCard data={card} key={card.nodeId}/>
+          <Link to = {`/instamart/${card.displayName}`} key={card.nodeId}>
+            <InstaMartCard data={card}/>
+         </Link>
         ))
        }
     </div>
@@ -35,3 +37,9 @@ if(status === "loading"){
 }
 
 export default InstaMart
+
+/*
+<Link to = {`/instamart/${data.displayName}`} key={card.nodeId}>
+ <InstaMartCard data={card}/>
+</Link>
+*/ 

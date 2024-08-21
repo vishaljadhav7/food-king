@@ -35,7 +35,7 @@ const getComparator = (type) => {
         case "low to high (costForTwo)":
             return (a, b) => parseInt(a.info.costForTwo.match(/\d+/)[0], 10) - parseInt(b.info.costForTwo.match(/\d+/)[0], 10);
         case "high to low (costForTwo)":
-            return (a, b) => parseInt(b.info.costForTwo.match(/\d+/)[0], 10) - parseInt(a.info.costForTwo.match(/\d+/)[0], 10);
+            return (a, b) => parseInt(b.info.costForTwo.match(/\d+/)[0], 10) - parseInt(a.info.costForTwo.match(/\d+/)[0], 10);    
         default:
             return null;
     }
@@ -74,9 +74,16 @@ const restaurantSlice = createSlice({
                 const sortedRestaurants = [...current(state.allRestaurants)].sort(comparator);
                 state.filteredRestaurants = sortedRestaurants;
             }
+        },
+        
+        searchItem : (state, action) => {
+            const searchQuery = action.payload;
+            if(!searchQuery) return;
+            const allNewRestaurants = [...current(state.allRestaurants)];
+            state.filteredRestaurants = allNewRestaurants.filter((item) => ( item.info.name?.toLowerCase().includes(searchQuery)))
         }
     }
 });
 
 export default restaurantSlice.reducer;
-export const { filteredRestaurantCards } = restaurantSlice.actions;
+export const { filteredRestaurantCards, searchItem } = restaurantSlice.actions;

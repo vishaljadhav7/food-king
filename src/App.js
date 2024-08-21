@@ -10,6 +10,7 @@ import SignUp from './pages/SignUp'
 // import Instamart from './pages/InstaMart'
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Error from "./Components/Error";
+import InstaMartList from "./Components/InstaMartList";
 
 const Instamart = lazy(() => import('./pages/InstaMart'));
 
@@ -49,6 +50,11 @@ const App = () => {
             {
                 path : "/restaurants/:resId",
                 element : <RestaurantMenu/>,
+                children : []
+            },
+            {
+                path : "/instamart/:instaMartId",
+                element : <InstaMartList/>,
                 children : []
             }
         ],

@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import  { filteredRestaurantCards} from '../features/restaurantSlice'
- import {filterItems} from '../utils/contanst'
- import { useDispatch } from 'react-redux';
-
-
+import {filterItems} from '../utils/contanst'
+import { useDispatch } from 'react-redux';
+import {searchItem} from '../features/restaurantSlice'
 
 
 const FilterPanel = () => {
@@ -13,9 +12,12 @@ const FilterPanel = () => {
   const dispatch = useDispatch();
 
   const handleFilters = (filterQuery) =>{
-    //  if(filterQuery === "default") return;
 
      dispatch( filteredRestaurantCards(filterQuery))       
+  }
+
+  const handleSearch = (sQuery) => {
+     dispatch(searchItem(sQuery.toLowerCase()))
   }
 
   return (
@@ -29,7 +31,7 @@ const FilterPanel = () => {
            className='p-2 rounded-md border-2 border-purple-700 w-full md:w-64'
            />
 
-         <button className='ml-2 py-2 px-4  bg-purple-500 text-2xl rounded-md text-white font-bold outline-none'> 
+         <button className='ml-2 py-2 px-4  bg-purple-500 text-2xl rounded-md text-white font-bold outline-none' onClick={()=>handleSearch(query)}> 
           <CiSearch />
          </button>
         </div>
