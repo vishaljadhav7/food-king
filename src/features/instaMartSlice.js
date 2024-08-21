@@ -33,6 +33,7 @@ const instaMartSlice = createSlice({
     name : "instamart",
     initialState,
     extraReducers : (builder) => {
+      
         builder 
 
         .addCase(fetchInstaMartCards.pending, (state)=>{

@@ -7,6 +7,8 @@ import { FaMinus } from "react-icons/fa6";
 
 
 const CartItem = ({data}) => {
+
+     
     const dispatch = useDispatch()
     const totalPrice = Math.floor((data.cartQuantity  *( data.defaultPrice || data.price))/100)
 
@@ -28,7 +30,7 @@ const CartItem = ({data}) => {
                   <img src={"https://media-assets.swiggy.com/swiggy/image/upload/"+ data.imageId} alt="" className='w-2/6 hidden md:block' /> 
                <div className='w-[100px] '>
                    <h3 className='font-semibold md:text-[13px] md:w-60'>{data.name}</h3>
-                    <button onClick={() => handleRemoveItem()}><FaTrash /></button>
+                    <button onClick={handleRemoveItem}><FaTrash /></button>
                </div>
              </div>
   
@@ -40,7 +42,7 @@ const CartItem = ({data}) => {
                 <div className='md:flex flex-col items-center justify-center text-[18px] md:-mt-22 text-center gap-3 ml-8 md:-ml-8'>
                    <button 
                    className='p-1 bg-teal-300 text-white font-semibold rounded-md'
-                    onClick={()=>handleAddItem()}
+                    onClick={handleAddItem}
                    >
                     <FaPlus /> 
                   </button>
@@ -49,7 +51,7 @@ const CartItem = ({data}) => {
                 
                    <button 
                    className='p-1 bg-teal-300 text-white font-semibold rounded-md'
-                    onClick={()=>handleDecreaseItem()}
+                    onClick={handleDecreaseItem}
                    >
                     <FaMinus /></button>
                 </div>

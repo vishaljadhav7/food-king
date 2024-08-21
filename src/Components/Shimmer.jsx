@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ShimmerCard = () =>{
+
     return (
     <div className="bg-white rounded-lg shadow-md p-2 animate-pulse w-80">
       <div className="h-40 bg-gray-200 rounded-lg"></div>

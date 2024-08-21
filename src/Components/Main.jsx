@@ -9,6 +9,7 @@ import { fetchRestaurants } from '../features/restaurantSlice'
 
 const Main = () => {
   // const {allRestaurants, filteredRestaurants, isLoading} =  useRestaurants(); // 
+
   const dispatch = useDispatch()
   const restaurantState = useSelector((store) => (store.restaurant));
   const {status, allRestaurants, filteredRestaurants} = restaurantState;
@@ -29,7 +30,7 @@ const Main = () => {
 
   return (
 
-    <div className='w-full  overflow-hidden'>
+    <div className='w-full overflow-hidden '>
          <FilterPanel/>
          <Restaurants/> 
     </div>

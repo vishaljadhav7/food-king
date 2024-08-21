@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 const Expandable = ({children}) => {
 
+
  const [expand, setExpand] = useState(false)   
     
  if(children?.length <= 100) return <p>{children}</p>

@@ -8,6 +8,7 @@ import NavSideBar from './NavSideBar';
 
 
 const Navbar = () => {
+
   const [isOpen, setIsOpen] = useState(false);
 
  const toggleNavMenu = () => {

@@ -7,6 +7,7 @@ import { IMG_URL } from '../utils/contanst';
 import CategorySection from './CategorySection';
 
 const RestaurantMenu = () => {
+
  const {resId} = useParams();
  
  const {restaurantListCards, status} = useRestaurantList(resId)

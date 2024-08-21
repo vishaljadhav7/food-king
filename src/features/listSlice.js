@@ -7,6 +7,7 @@ const listSlice = createSlice({
     },
     reducers : {
         addList : (state, action) => {
+
            state.cachedLists = [
              ...state.cachedLists,
              {

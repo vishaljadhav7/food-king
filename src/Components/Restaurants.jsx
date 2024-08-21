@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom';
 
 const Restaurants = () => {   
   const restaurantState = useSelector((store) => (store.restaurant));
+
   
   const {filteredRestaurants} = restaurantState;
 
    
   return (
-    <div className='p-2 m-2 grid md:grid-cols-4  grid-cols-2 items-center gap-5'>
+    <div className='p-2 m-2 grid md:grid-cols-4  grid-cols-2  md:gap-1  place-content-center -ml-3 md:-ml-0'>
       { filteredRestaurants.length && filteredRestaurants.map((restaurantItem)=> { 
         const resId = restaurantItem.info.id;
         

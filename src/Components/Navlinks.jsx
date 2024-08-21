@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-const Navlinks = ({navlinks, navSectionStyle , buttonStyle, toggleNavMenu}) => {
+const Navlinks = ({navlinks, navSectionStyle , buttonStyle}) => {
+
   const cartItems = useSelector((state)=>(state.cart.items))
   const totalItems = cartItems.length
 

@@ -5,6 +5,7 @@ import Expandable from './Expandable';
 
 
 const CategoryItemList = ({items}) => {
+
   const dispatch = useDispatch()
 
   const handleAdd = (item) => {
