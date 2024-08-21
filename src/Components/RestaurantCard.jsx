@@ -3,8 +3,6 @@ import { CiStar } from "react-icons/ci";
 
 
 const RestaurantCard = ({resData}) => {
-  console.log(resData)
-   
     const {
       cloudinaryImageId,
       name,
