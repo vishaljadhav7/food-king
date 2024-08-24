@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./Components/Main";
 import Cart from './pages/Cart'
 import Contact from './pages/Contact'
-import SignUp from './pages/SignUp'
+import SignUp from "./pages/SignUp";
 // import Instamart from './pages/InstaMart'
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Error from "./Components/Error";
@@ -43,11 +43,6 @@ const App = () => {
                 children : []
             },
             {
-                path : "/singup",
-                element : <SignUp/>,
-                children : []
-            },
-            {
                 path : "/restaurants/:resId",
                 element : <RestaurantMenu/>,
                 children : []
@@ -55,6 +50,11 @@ const App = () => {
             {
                 path : "/instamart/:instaMartId",
                 element : <InstaMartList/>,
+                children : []
+            },
+            {
+                path : '/signup',
+                element : <SignUp/>,
                 children : []
             }
         ],
