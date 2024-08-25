@@ -37,51 +37,49 @@ if(status === 'loading'){
 
 
   return (
-      <div >
-
-    <div className='w-screen '>
-       { restaurantListCards.length &&  <div className="flex basis-full h-60 justify-evenly items-center p-8 bg-blue-950">
+    <div className="w-screen ">
+    {restaurantListCards.length && (
+      <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center p-8 bg-blue-900 rounded-lg shadow-lg">
         <img
-          className="w-[254px] h-[165px] mob:w-[130px] mob:[81px] rounded-lg object-cover"
+          className="w-[254px] h-[165px] mob:w-[130px] mob:h-[81px] rounded-lg object-cover"
           src={IMG_URL + restaurantListCards[2]?.card?.card?.info?.cloudinaryImageId}
-
           alt={name}
         />
-
-        <div className="flex flex-col basis-[540px] m-5 text-white">
-          <h2 className="md:text-3xl max-w-[538px] font-semibold text-white">
+  
+        <div className="flex flex-col md:basis-[540px] m-5 text-white text-center md:text-left">
+          <h2 className="md:text-3xl text-2xl font-semibold text-white mb-2">
             {name}
           </h2>
-          <p className="overflow-hidden whitespace-nowrap text-[15px] max-w-[538px] text-white">
+          <p className="overflow-hidden whitespace-nowrap text-[15px] text-white max-w-full md:max-w-[538px]">
             {cuisines.join(", ")}
           </p>
-          <div className="flex mt-5 justify-between items-center text-sm font-semibold pb-2.5 max-w-[342px] mob:text-xs mob:font-normal">
-            <div className="flex items-center px-1 py-0 gap-1 ">
+          <div className="flex justify-center md:justify-between items-center text-sm font-semibold mt-5 space-x-4 md:space-x-0 text-white">
+            <div className="flex items-center gap-1">
               <AiFillStar />
-              <span >{avgRating}</span>
+              <span>{avgRating}</span>
             </div>
-            <div className='ml-1 md:ml-0 font-semibold text-2xl md:text-1xl'>|</div>
-            <div className='ml-3 md:ml-0'>{costForTwoMessage}</div>
+            <div className="hidden md:inline-block font-semibold text-xl">|</div>
+            <div>{costForTwoMessage}</div>
           </div>
         </div>
-      </div>}
-
-      <div className='text-center mt-2 px-4'>
-
-         { categories.length && categories.map((category, idx)=> (
-           <CategorySection 
-            key={category?.card?.card.title}
+      </div>
+    )}
+  
+    <div className="text-center mt-4 px-4">
+      {categories.length &&
+        categories.map((category, idx) => (
+          <CategorySection
+            key={category?.card?.card?.title}
             data={category?.card?.card}
             showItems={showItems}
-            index = {idx}
+            index={idx}
             accordionId={accordionId}
-           />
-         ))}
-
-      </div>
-
+          />
+        ))}
     </div>
-      </div>
+  </div>
+  
+  
   )
 }
 
