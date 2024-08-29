@@ -8,7 +8,7 @@ const InstaMartCard = ({data}) => {
         <div className=''>
            <img src={INSTA_MART_CDN + data.imageId} alt="card" className='w-3/4' />
         </div>
-        <h2>{data.displayName}</h2>
+        <h2 className='text-1xl font-semibold'>{data.displayName}</h2>
     </div>
   )
 }
