@@ -5,26 +5,27 @@ const SignUp = () => {
      e.preventDefault()
   }
   return (
-    <div className=' h-[87.3%] flex justify-center items-center'>
-          <form className='bg-fuchsia-400 md:w-[320px] w-full  h-[60%] flex flex-col justify-between p-4 shadow-2xl shadow-stone-500 rounded-lg'>
-              <div className='flex flex-col gap-1'>
-                  <label htmlFor="name">Name</label>
-                  <input type="text" placeholder='your name' id="name" className='p-2'/>
-              </div> 
+    <div className='h-screen flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+    <form className='bg-white md:w-[400px] w-[90%] max-w-md h-auto p-6 flex flex-col justify-between shadow-lg rounded-lg'>
+        <div className='flex flex-col gap-2 mb-4'>
+            <label htmlFor="name" className='text-gray-700 font-semibold'>Name</label>
+            <input type="text" placeholder='Your name' id="name" className='p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'/>
+        </div> 
 
-              <div className='flex flex-col gap-1'>
-                 <label htmlFor="email">Email</label>
-                 <input type="text" placeholder='your email' id="email" className='p-2'/>
-              </div>
- 
-               <div className='flex flex-col gap-1'>
-                 <label htmlFor="passcode">Password</label>
-                 <input type="password" placeholder='enter your password' id="passcode" className='p-2'/>
-              </div>  
+        <div className='flex flex-col gap-2 mb-4'>
+            <label htmlFor="email" className='text-gray-700 font-semibold'>Email</label>
+            <input type="text" placeholder='Your email' id="email" className='p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'/>
+        </div>
 
-              <button type='submit' onClick={handleSubmit} className='p-2 w-28 rounded-2xl bg-indigo-600 text-white hover:scale-110'>Sign Up</button>
-          </form>      
-    </div>
+        <div className='flex flex-col gap-2 mb-6'>
+            <label htmlFor="passcode" className='text-gray-700 font-semibold'>Password</label>
+            <input type="password" placeholder='Enter your password' id="passcode" className='p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'/>
+        </div>  
+
+        <button type='submit' onClick={handleSubmit} className='p-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition transform hover:scale-105'>Sign Up</button>
+    </form>      
+</div>
+
   )
 }
 
