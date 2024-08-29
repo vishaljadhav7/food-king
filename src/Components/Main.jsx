@@ -16,7 +16,7 @@ const Main = () => {
 
   useEffect(()=>{
     if(!allRestaurants.length){
-      console.log("need to fetch");
+      // console.log("need to fetch");
      dispatch(fetchRestaurants(RESTAURANT_MENU_API))
     }
   }, []) 

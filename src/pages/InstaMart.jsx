@@ -12,7 +12,7 @@ const InstaMart = () => {
 
   useEffect(()=>{
     if(filteredInstaMartCards.length > 0){
-      console.log("not fetching instamart cards")
+      // console.log("not fetching instamart cards")
     }else{
       console.log("fetching instamart cards")
       dispatch(fetchInstaMartCards())   
