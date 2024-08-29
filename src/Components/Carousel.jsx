@@ -15,14 +15,14 @@ const Carousel = ({ carousels = [] }) => {
 
   const next = () => {
     setLimitIdx(() => Math.floor(carousel.current.scrollWidth / carousel.current.offsetWidth) - 1);
-    if (currentIdx < limitIdx) {
+    if (currentIdx <= limitIdx) {
       setCurrentIdx(prev => prev + 1);
     }
   };
 
   useEffect(() => {
     if (carousel.current !== null) {
-      carousel.current.scrollLeft = carousel.current.offsetWidth * currentIdx;
+      carousel.current.scrollLeft = carousel.current.offsetWidth * currentIdx + 1;
     }
   }, [currentIdx]);
 
