@@ -5,7 +5,7 @@ const SignUp = () => {
      e.preventDefault()
   }
   return (
-    <div className='h-screen flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+    <div className='h-screen flex justify-center items-center bg-slate-300'>
     <form className='bg-white md:w-[400px] w-[90%] max-w-md h-auto p-6 flex flex-col justify-between shadow-lg rounded-lg'>
         <div className='flex flex-col gap-2 mb-4'>
             <label htmlFor="name" className='text-gray-700 font-semibold'>Name</label>
