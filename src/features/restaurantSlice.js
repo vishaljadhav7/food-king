@@ -11,7 +11,8 @@ const STATUSES = Object.freeze({
 const initialState = {
     status: STATUSES.IDLE,
     allRestaurants: [],
-    filteredRestaurants: []
+    filteredRestaurants: [],
+    allCarousels : []
 };
 
 export const fetchRestaurants = createAsyncThunk('fetchRes', async (RESTAURANT_MENU_API) => {
@@ -19,8 +20,10 @@ export const fetchRestaurants = createAsyncThunk('fetchRes', async (RESTAURANT_M
         const response = await fetch(RESTAURANT_MENU_API);
         const jsonData = await response.json();
         const parsed_Response = JSON?.parse(jsonData.contents);
+        // console.log("parsed response ", parsed_Response)
+        const allCarouselCards = parsed_Response.data.cards[0].card.card.gridElements.infoWithStyle.info
         const allCards = parsed_Response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        return allCards;
+        return {allCards, allCarouselCards};
     } catch (error) {
         return error;
     }
@@ -50,8 +53,9 @@ const restaurantSlice = createSlice({
                 state.status = STATUSES.LOADING;
             })
             .addCase(fetchRestaurants.fulfilled, (state, action) => {
-                state.allRestaurants = action.payload;
-                state.filteredRestaurants = action.payload;
+                state.allRestaurants = action.payload.allCards;
+                state.filteredRestaurants = action.payload.allCards;
+                state.allCarousels = action.payload.allCarouselCards
                 state.status = STATUSES.IDLE;
             })
             .addCase(fetchRestaurants.rejected, (state) => {

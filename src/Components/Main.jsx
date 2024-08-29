@@ -6,20 +6,18 @@ import Shimmer from './Shimmer'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { fetchRestaurants } from '../features/restaurantSlice'
-
+import Carousel from './Carousel'
 const Main = () => {
   // const {allRestaurants, filteredRestaurants, isLoading} =  useRestaurants(); // 
 
   const dispatch = useDispatch()
   const restaurantState = useSelector((store) => (store.restaurant));
-  const {status, allRestaurants, filteredRestaurants} = restaurantState;
+  const {status, allRestaurants, allCarousels} = restaurantState;
 
   useEffect(()=>{
-    if(allRestaurants.length > 0){
-    //  console.log("need not to fetch");
-    }else{
-      // console.log("need  to fetch");
-      dispatch(fetchRestaurants(RESTAURANT_MENU_API))
+    if(!allRestaurants.length){
+      console.log("need to fetch");
+     dispatch(fetchRestaurants(RESTAURANT_MENU_API))
     }
   }, []) 
 
@@ -31,6 +29,7 @@ const Main = () => {
   return (
 
     <div className='w-full overflow-hidden '>
+         <Carousel carousels={allCarousels}/>
          <FilterPanel/>
          <Restaurants/> 
     </div>
