@@ -51,7 +51,7 @@ const Carousel = ({ carousels = [] }) => {
       </div>
       <div className='h-[60%] overflow-hidden'>
         <div
-          className='h-full flex gap-5 overflow-hidden scroll-smooth transition-transform duration-500 ease-in-out'
+          className='h-full flex gap-5 overflow-hidden scroll-smooth transition-transform duration-500 ease-in-out pl-4'
           ref={carousel}
         >
           {carousels.map((carousel) => (
