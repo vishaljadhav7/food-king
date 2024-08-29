@@ -28,7 +28,7 @@ const Main = () => {
 
   return (
 
-    <div className='w-full overflow-hidden '>
+    <div className='w-full overflow-hidden bg-slate-300'>
          <Carousel carousels={allCarousels}/>
          <FilterPanel/>
          <Restaurants/> 
