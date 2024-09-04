@@ -27,7 +27,7 @@ if(status === "loading"){
      <div className=' bg-slate-300 p-5'>
       <h1 className='mb-5 text-center text-2xl font-bold'>Shop by Category!</h1>
       <div className='w-screen min-h-screen grid md:grid-cols-5 grid-cols-2 gap-3 place-items-center '>     
-       {filteredInstaMartCards?.length && 
+       {(filteredInstaMartCards?.length > 0) && 
         filteredInstaMartCards.map((card) => (
           <Link to = {`/instamart/${card.displayName}`} key={card.nodeId}>
             <InstaMartCard data={card}/>

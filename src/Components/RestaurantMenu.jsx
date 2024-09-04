@@ -66,7 +66,7 @@ if(status === 'loading'){
     )}
   
     <div className="text-center mt-4 px-4">
-      {categories.length &&
+      {(categories?.length > 0) &&
         categories.map((category, idx) => (
           <CategorySection
             key={category?.card?.card?.title}
