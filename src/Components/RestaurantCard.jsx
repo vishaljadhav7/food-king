@@ -1,5 +1,6 @@
 import {CARD_CDN_URL} from '../utils/contanst'
 import { CiStar } from "react-icons/ci";
+import { MdAccessTimeFilled } from "react-icons/md";
 
 
 const RestaurantCard = ({resData}) => {
@@ -9,10 +10,9 @@ const RestaurantCard = ({resData}) => {
       avgRating,
       cuisines,
       costForTwo,
-      deliveryTime,
+      sla:{deliveryTime},
     } = resData.info;
 
-    // console.log( cloudinaryImageId ,  name, avgRating, cuisines, costForTwo,  deliveryTime)
 
     const cuisinesText = cuisines.length <= 2 ? cuisines.join(',') : cuisines.slice(0,2).join(',')
 
@@ -29,16 +29,20 @@ const RestaurantCard = ({resData}) => {
   />
   <h3 className="font-bold py-2 text-md md:text-lg text-gray-800 truncate">{name}</h3>
   
-  <div className="flex items-center gap-1 text-yellow-500 text-sm">
+  <div className="flex items-center gap-2 text-yellow-500 text-sm font-bold">
     <CiStar />
     <span>{avgRating}</span> 
+    <div className='flex items-center  text-black'>
+    {<MdAccessTimeFilled/>}
+    <span>{deliveryTime} mins</span>
+    </div>
   </div>
   
   <div className="text-sm text-gray-500 mt-1 truncate">
     <h4>{cuisinesText}</h4>
   </div>
     
-  <h4 className="text-sm font-semibold text-gray-700 mt-2">{costForTwo}</h4>
+  <h4 className="text-sm font-bold text-gray-700 mt-2">{costForTwo}</h4>
 </div>
 
     );
