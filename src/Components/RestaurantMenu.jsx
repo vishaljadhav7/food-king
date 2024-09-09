@@ -38,7 +38,7 @@ if(status === 'loading'){
 
   return (
     <div className="w-screen ">
-    {restaurantListCards.length && (
+    {(restaurantListCards.length > 0) && (
       <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center p-8 bg-blue-900 rounded-lg shadow-lg">
         <img
           className="w-[254px] h-[165px] mob:w-[130px] mob:h-[81px] rounded-lg object-cover"
