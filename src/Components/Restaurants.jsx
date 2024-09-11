@@ -12,7 +12,7 @@ const Restaurants = () => {
 
    
   return (
-    <div className='p-2 m-2 grid md:grid-cols-4  grid-cols-2  md:gap-1  place-content-center  place-items-center -ml-3 md:-ml-0'>
+    <div className='p-2 m-2 grid md:grid-cols-4  grid-cols-2  md:gap-1 place-items-center  place-content-center '>
       { (filteredRestaurants?.length > 0) && filteredRestaurants.map((restaurantItem)=> { 
         const resId = restaurantItem.info.id;
         
